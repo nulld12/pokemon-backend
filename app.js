@@ -1,9 +1,10 @@
 "use strict"
-
+const express= require("express");
 const app = express();
-const cors = cors();
+const cors= require("cors");
+// const cors = cors();
 app.use(express.json());
-app.use(express.urlencode({ extends: true }));
+app.use(express.urlencoded({ extends: true }));
 const fs = require("fs");
 const port = 3000;
 const combates = [];
