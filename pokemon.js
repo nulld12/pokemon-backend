@@ -3,19 +3,13 @@ const express = require("express");
 const router =express.Router();
 const fs = require("fs");
 const archivo = fs.readFileSync("pokemon.js");
-const combates = [];
 
-
-function middleWare(req, res, next) {
-    console.log(req.combates);
-    console.log("estoy en el middleware");
-    next();
-}
 router.get("/lista", (req, res)=>{
     console.log(req.query);
     res.send(JSON.parse(archivo[nombre]))
  
 })
+let pokemon;
 router.post("/nuevo", (req, res)=>{
     let nuevo= (req.body);
     console.log(nuevo);
@@ -38,8 +32,6 @@ router.post("/nuevo", (req, res)=>{
         res.status(400).send("faltan datos necesarios")
     }
     res.status(200).send("status:","ok");
-    
-    
+    pokemon.push()
 })
-
 module.exports =router;
